@@ -117,7 +117,7 @@ public UsuarioDAO() {
     }
 
 public void adiciona(Usuario usuario) {
-    String sql = "INSERT INT usuario(nome,cpf,email,telefone) VALUES (?,?,?,?)";   //IMPORTA OS INSERT DO SQL
+    String sql = "INSERT INTO usuario(nome,cpf,email,telefone) VALUES (?,?,?,?)";   //IMPORTA OS INSERT DO SQL
     
     try {
     PreparedStatement stmt = connection.prepareStatement(sql);
