@@ -1,3 +1,43 @@
 //USANDO NETBEANS CRIE UMA APLICAÇÃO JAVA COM NOME (MinhaAplicação).
 //CRIE 4 PACOTES JAVA COM NOME 1-dao 2-factory 3-gui 4-modelo.
-//DENTRO DO PACOTE (factory) CRIE 2 Classes Java com os nomes (TestaConexao) e (ConnectionFactory)
+//DENTRO DO PACOTE (factory) CRIE 2 Classes Java com os nomes (TestaConexao) e (ConnectionFactory).
+
+//DENTRO DA CLASSE (TestaConexao) coloque: 
+    package factory;
+
+      import java.sql.Connection;                                                 /* OBRIGATORIO */
+      import java.sql.SQLException;                                               /* OBRIGATORIO */
+
+          public class TestaConexao {                                                 /* NOME DA PASTA */
+ 
+            public static void main  (String[] args) throws SQLException {          /* DEFININDO CLASSE PRINCIPAL */
+            Connection connection = new ConnectionFactory().getConnection();    /* CODIGO QUE CONECTA SQL AO JAVA */
+            System.out.println("Conexão Aberta!");                              /* TESTE DE CONEXÃO */
+            connection.close();                                                 /* FECHA CONEXÃO */
+            }
+        }
+
+//DENTRO DA CLASSE ConnectionFactory coloque:
+      package factory;
+
+      import java.sql.Connection;                                                 /* OBRIGATORIO */
+      import java.sql.SQLException;                                               /* OBRIGATORIO */
+
+          public class TestaConexao {                                                 /* NOME DA PASTA */
+ 
+            public static void main  (String[] args) throws SQLException {          /* DEFININDO CLASSE PRINCIPAL */
+              Connection connection = new ConnectionFactory().getConnection();    /* CODIGO QUE CONECTA SQL AO JAVA */
+              System.out.println("Conexão Aberta!");                              /* TESTE DE CONEXÃO */
+              connection.close();                                                 /* FECHA CONEXÃO */
+            }
+          }
+
+//NÃO ESQUEÇA DE COLOCAR TODAS AS BIBLIOTECAS NO NETBENAS
+
+  Vá na pasta (bibliotecas) e clique com botão direito e vá em adicionar JAR/PASTA e instale o seguinte arquivo:
+
+      https://drive.google.com/file/d/1H6WESWFk2VL4hH6OuILF_6dxUHEHYLFl/view
+
+
+// AGORA COM TUDO FEITO VA NA CLASSE (TestaConexao) e EXECUTE E VEJA SE DEU TUDO CERTO, NÃO ESQUEÇA DE VER SE O SQL ESTA ABERTO EM SUA MAQUINA COM SEGUINTES NOME (database=[nome-DB] e senha [sua-senha])
+
