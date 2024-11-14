@@ -41,3 +41,59 @@
 
 // AGORA COM TUDO FEITO VA NA CLASSE (TestaConexao) e EXECUTE E VEJA SE DEU TUDO CERTO, NÃO ESQUEÇA DE VER SE O SQL ESTA ABERTO EM SUA MAQUINA COM SEGUINTES NOME (database=[nome-DB] e senha [sua-senha])
 
+//CONTINUANDO
+
+//VA NA CLASSE JAVA (modelo) e coloque:
+    package modelo;
+    public class Usuario {
+            Long id;
+            String nome;
+            String cpf;
+            String email;
+            String telefone;
+    
+            public Long getId() {
+            return id;
+            }
+    
+            public void setId(Long id) {
+            this.id = id;
+            }
+    
+            public String getNome() {
+            return nome;
+            }
+    
+            public void setNome(String nome) {
+                this.nome = nome;
+            }
+    
+            public String getCpf() {
+                return cpf;
+            }
+    
+            public void setCpf(String cpf) {
+            this.cpf = cpf;
+        }
+
+        public String getEmail() {
+            return email;
+        }
+
+        public void setEmail(String email) {
+            this.email = email;
+        }
+
+        public String getTelefone() {
+            return telefone;
+        }
+
+        public void setTelefone(String telefone) {
+        this.telefone = telefone;
+        }
+
+    }
+
+
+
+
