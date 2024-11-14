@@ -1,0 +1,31 @@
+// Dentro do pacote (gui) crie uma j-Frame com os botoes de Cadastro (btnCadastro) e Limpar (btnLimpar)
+
+ private void btnCadastroActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        Usuario usuarios = new Usuario();
+        usuarios.setNome(txtNome.getText());
+        usuarios.setCpf(txtCpf.getText());
+        usuarios.setEmail(txtEmail.getText());
+        usuarios.setTelefone(txtFone.getText());
+        
+        if ((txtNome.getText().isEmpty()) || (txtCpf.getText().isEmpty()) || (txtEmail.getText().isEmpty()) || (txtFone.getText().isEmpty())) {
+            JOptionPane.showMessageDialog(null, "Os campos não podem retornar vazios");
+        } 
+        else {
+            UsuarioDAO dao = new UsuarioDAO();
+            dao.adiciona(usuarios);
+            JOptionPane.showMessageDialog(null, "Usuário "+txtNome.getText()+" inserido com sucesso! ");
+        }
+        
+        txtNome.setText(null);
+        txtCpf.setText(null);
+        txtEmail.setText(null);
+        txtFone.setText(null);  
+        
+    }                                           
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        txtNome.setText(null);
+        txtCpf.setText(null);
+        txtEmail.setText(null);
+        txtFone.setText(null);  
+    }                         
