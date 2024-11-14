@@ -1,0 +1,37 @@
+//CLASSE JAVA ConnectionFactory
+
+package factory;
+
+import java.sql.Connection;     //OBRIGATORIO
+import java.sql.DriverManager;  //OBRIGATORIO
+import java.sql.SQLException;   //OBRIGATORIO
+
+public class ConnectionFactory {                //Nome da Pasta
+    public Connection getConnection(){          //Pega a COnexao    
+        try {                                           
+        return
+            DriverManager.getConnection("jdbc:mysql://localhost/projetojava","root","");       //Onde pega a conexao com banco de dados do sql 
+        }
+        catch (SQLException excecao) {                                                         //traça as exceções
+            throw new RuntimeException(excecao);                
+        }
+    }
+}
+
+
+
+//CLASSE JAVA TestaConexao
+
+package factory;
+
+import java.sql.Connection;                                                 /* OBRIGATORIO */
+import java.sql.SQLException;                                               /* OBRIGATORIO */
+
+public class TestaConexao {                                                 /* NOME DA PASTA */
+ 
+    public static void main  (String[] args) throws SQLException {          /* DEFININDO CLASSE PRINCIPAL */
+        Connection connection = new ConnectionFactory().getConnection();    /* CODIGO QUE CONECTA SQL AO JAVA */
+        System.out.println("Conexão Aberta!");                              /* TESTE DE CONEXÃO */
+        connection.close();                                                 /* FECHA CONEXÃO */
+    }
+}
