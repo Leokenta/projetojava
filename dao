@@ -1,0 +1,37 @@
+package dao;
+//IMPORT OBRIGATORIOS
+import factory.ConnectionFactory;
+import modelo.Usuario;
+import java.sql.*;
+import java.sql.PreparedStatement;
+
+public class UsuarioDAO {                               //NOMEANDO OS OBJETOS DO SQL
+    private Connection connection;
+    Long id;
+    String nome;
+    String cpf;
+    String email;
+    String telefone;
+    
+public UsuarioDAO() {
+    this.connection = new ConnectionFactory().getConnection();              //FAZ A CONEXAO DO SQL AO JAVA
+    }
+
+public void adiciona(Usuario usuario) {
+    String sql = "INSERT INT usuario(nome,cpf,email,telefone) VALUES (?,?,?,?)";   //IMPORTA OS INSERT DO SQL
+    
+    try {
+    PreparedStatement stmt = connection.prepareStatement(sql);
+    stmt.setString(1,usuario.getNome());            //PEGA O INSERT O 1° (?)
+    stmt.setString(2,usuario.getCpf());             //PEGA O INSERT O 2° (?)
+    stmt.setString(3,usuario.getEmail());           //PEGA O INSERT O 3° (?)
+    stmt.setString(4,usuario.getTelefone());        //PEGA O INSERT O 4° (?)
+    stmt.execute();                                 //EXECUTA
+    stmt.close();                                   //FECHA
+    }
+    catch (SQLException u){                         //TRATA AS EXCEÇÕES
+        throw new RuntimeException(u);
+    }                                                                     
+   
+}
+}
